@@ -280,8 +280,10 @@
     }
     .tabContent {
         left: 0;
+        .large,
+        form .form_grp.form_inline input{ width: calc(100% - 180px) !important; }
+        form .form_grp.form_inline input[type="date"]{ width: calc( 100%/2 - 105px) !important; }
     }
-
     @include screen('mobile') {
         &>.tabItem {
             &>a {
@@ -290,6 +292,12 @@
                 margin-bottom: 6px;
                 border-radius: 6px;
             }
+        }
+        .tabContent {
+            .large,
+            form .form_grp.form_inline input,
+            form .form_grp.form_inline input[type="date"]{ width: 100% !important; }
+
         }
     }
 }

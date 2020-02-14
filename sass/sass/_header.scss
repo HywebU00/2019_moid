@@ -287,7 +287,8 @@
         top: 60px;
         left: 0;
         z-index: 98;
-        background: darken($primaryColor, 10);
+        // background: darken($primaryColor, 0);
+        background: #cacaca;
         label {
             font-size: 0em;
             line-height: 0;
@@ -371,7 +372,7 @@
                     line-height: 1.6;
                     font-weight: bold;
                     a{
-                        margin-bottom: 8px;
+                        margin: 0 0 8px 0;
                     }
                 }
             }

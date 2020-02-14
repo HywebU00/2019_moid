@@ -26,6 +26,12 @@
 }
 
 .login{
+    .container{
+        // background: rgba(255, 255, 255, .75);
+        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,.75) 75%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,.75) 75%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,.75) 75%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    }
     form {
         .form_grp{
             position: relative;
@@ -50,6 +56,7 @@
         }
         @include screen('mobile') {
             .form_grp{
+                width: 90%;
                 margin-bottom: 1.25em;
 
                 //  input眼睛
