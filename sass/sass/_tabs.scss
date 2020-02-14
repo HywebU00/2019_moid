@@ -1,0 +1,341 @@
+.tabSet {
+    max-width: 100%;
+    margin: 1em auto;
+    overflow: hidden;
+    @extend %clearfix;
+    @include screen('mobile') {
+        width: auto;
+        height: auto !important;
+    }
+}
+.tabs {
+    position: relative;
+    &>.tabItem {
+        &.active>a {
+            background-color: $primaryColor;
+            color: #FFF;
+        }
+        float: left;
+        margin: 0;
+        padding: 0;
+        font-size:1em;
+        line-height: 1;
+        @include screen('mobile') {
+            float: none;
+            &>a {
+                width: 100% !important;
+                // border-bottom: 1px solid #888;
+            }
+            &.active>a {
+                border-color: #bbb;
+            }
+        }
+        &>a {
+            display: block;
+            padding: 16px 0 14px;
+            text-align: center;
+            background-color: #aaa;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            @include text-overflow;
+            @include box-sizing;
+            &:hover {
+                background: $primaryColor;
+            }
+        }
+    }
+}
+//多組 可設定差異
+.Type-1 {
+    background: url('../images/bg-tab-bar.jpg') 50% 220px no-repeat;
+    h2{
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    // &:before{
+    //     content: '1';
+    //     background: url('../images/bg-tab-bar.jpg') 50% 50% no-repeat;
+    //     display: block;
+    //     height: 120px;
+    // }
+    &>.tabItem {
+        &>a {
+            padding: 30px 0;
+            background: #eee;
+            
+            color: $primaryColor;
+            background-color: rgba(255, 255, 255, 0);
+            font-size: 1.25em;
+            line-height: 1.25;
+            &:before{
+                display: block;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin: 0 auto 10px;
+                // background-size: contain;
+            }
+        }
+        &:nth-child(1){
+            &>a {
+                &:before{
+                    content: '';
+                    background: url('../images/icon-01.png') 50% top no-repeat,
+                                #efefef;
+                }
+                &:hover{
+                    &:before{
+                        background: url('../images/icon-01.png') 50% bottom no-repeat,
+                                    linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+                    }
+                }
+            }
+        }
+        &:nth-child(3){
+            &>a {
+                &:before{
+                    content: '';
+                    background: url('../images/icon-02.png') 50% top no-repeat,
+                                #efefef;
+                }
+                &:hover{
+                    &:before{
+                        background: url('../images/icon-02.png') 50% bottom no-repeat,
+                                    linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+                    }
+                }
+            }
+        }
+        &:nth-child(5){
+            &>a {
+                &:before{
+                    content: '';
+                    background: url('../images/icon-03.png') 50% top no-repeat,
+                                #efefef;
+                }
+                &:hover{
+                    &:before{
+                        background: url('../images/icon-03.png') 50% bottom no-repeat,
+                                    linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+                    }
+                }
+            }
+        }
+    }
+
+    .tabItem>a:hover {
+        background: none;
+        color: $primaryColor;
+    }
+
+    // .tabItem{
+    //     &:nth-child(3){
+    //         &>a:hover {
+    //             &:before{
+    //                 background: url('../images/icon-02.png') 50% bottom no-repeat,
+    //                             linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+    //             }
+    //         }
+    //     }
+    // }
+
+    .tabItem.active {
+        &>a{
+            background: none;
+            color: $primaryColor;
+        }
+        &:nth-child(1){
+            &>a {
+                &:before{
+                    background: url('../images/icon-01.png') 50% bottom no-repeat,
+                                linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+                }
+            }
+        }
+        &:nth-child(3){
+            &>a {
+                &:before{
+                    background: url('../images/icon-02.png') 50% bottom no-repeat,
+                                linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+                }
+            }
+        }
+        &:nth-child(5){
+            &>a {
+                &:before{
+                    background: url('../images/icon-03.png') 50% bottom no-repeat,
+                                linear-gradient(45deg, rgba(0,255,255,1) 0%,rgba(0,104,183,1) 100%);
+                }
+            }
+        }
+    }
+
+    .tabContent{
+        color: #fff;
+        width: 60%;
+        h3{
+            font-size: 2em;
+            line-height: 1.2;
+        }
+        p{}
+        &:before{
+            float: left;
+            margin-left: -130px;
+            margin-top: 70px;
+            font-size: 10em;
+            color: skyblue;
+            // background: -webkit-linear-gradient(top,#fd0b58 0,#a32b68 100%);
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+        }
+        &:nth-child(2){
+            &:before{
+                content:'1';
+
+            }
+        }
+        &:nth-child(4){
+            &:before{
+                content:'2';
+            }
+        }
+        &:nth-child(6){
+            &:before{
+                content:'3';
+            }
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .tabContent{
+            width: auto;
+            padding-left: 10em;
+        }
+    }
+
+    @include screen('mobile') {
+        background: none;
+        h2{
+            height: auto;
+        }
+        .tabContent{
+            color: #333;
+            // border-bottom: solid 1px #ddd;
+            background: #f5f5f5;
+            border-radius: 6px;
+            position: relative;
+            &:after{
+                content: '';
+                display: block;
+                background: #f5f5f5;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: -14px;
+                left: 50%;
+                margin-left: -15px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.Type-2 {
+    &>.tabItem {
+        &.active>a {
+            &:after{
+                content: '';
+                display: block;
+                width: 16px;
+                height: 16px;
+                background: $primaryColor;
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                margin-left: -8px;
+                transform: rotate(45deg);
+            }
+            &:hover, &:focus{
+                color: #fff;
+            }
+        }
+        &>a {
+            background-color: #eee;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            color: #000;
+            font-size: 1.125em;
+
+            position: relative;
+            overflow: visible;
+            &:hover {
+                background: lighten($primaryColor, 10);
+                color: #fff;
+                &:after{
+                    background: lighten($primaryColor, 10);
+                }
+            }
+        }
+    }
+    .tabContent {
+        left: 0;
+    }
+
+    @include screen('mobile') {
+        &>.tabItem {
+            &>a {
+                background-color: $primaryColor;
+                color: #fff;
+                margin-bottom: 6px;
+                border-radius: 6px;
+            }
+        }
+    }
+}
+
+// 顯示content
+.active+.tabContent {
+    display: block;
+}
+.tabContent {
+    position: absolute;
+    top: auto;
+    // left: 0;
+    right: 0;
+    clear: both;
+    padding: 30px 20px;
+    display: none;
+    // width: 60%;
+
+    @media screen and (max-width: 1000px) {
+        width: auto;
+        // padding-left: 10em;
+    }
+
+    @include screen('mobile') {
+        position: static;
+        width: auto;
+    }
+    ul {
+        @include li-reset;
+    }
+    li {
+        // margin: 0 0 1.3em 0;
+        padding: 0;
+        line-height: 1.6;
+        // border-bottom: 1px #CCC dashed;
+        @include screen('mobile') {
+            @include text-overflow();
+        }
+        a {
+            @include aSetting_nocolor;
+        }
+        time {
+            display: inline-block;
+            margin: 0 0 0 1em;
+            font-size: .813em;
+            color: #666;
+        }
+    }
+}

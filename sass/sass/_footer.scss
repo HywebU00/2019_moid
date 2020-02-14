@@ -1,0 +1,98 @@
+footer {
+    @include box-sizing(border-box);
+    @include clearfix;
+    text-align: left;
+    font-size: 0.9em;
+    padding: 2em 0;
+    background: $secondaryColor;
+    color: #fff;
+    border-top: solid 1px rgba(255, 255, 255, .3);
+    .container {
+        @include gutter;
+        >div {
+            // padding-bottom: 1em;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+    .footer_logo {
+        @include make-xs-column(8);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        @include make-lg-column(2);
+        @include gutter();
+    }
+    .footer_info {
+        @include make-xs-column(12);
+        @include make-sm-column(7);
+        @include make-md-column(7);
+        @include make-lg-column(7);
+        @include gutter();
+    }
+    .footer_icon {
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter();
+    }
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        li {
+            float: left;
+            display: block;
+            a {
+                display: block;
+                padding: 0 1em;
+                color: #FFF;
+                border-left: solid 1px rgba(255, 255, 255, .5);
+                @include transition(all, .3s, ease-out);
+
+                &:hover,
+                &:focus {
+                    // background: darken($primaryColor, 10);
+                }
+            }
+            &:first-child a{
+                border-left: 0;
+            }
+        }
+    }
+    p {
+        line-height: 1.65em;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 1em;
+    }
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        em {
+            font-style: normal;
+            color: $primaryColor;
+            padding: 0 .5em;
+        }
+    }
+    .footer_icon {
+        a {
+            display: inline-block;
+            vertical-align: top;
+        }
+        img {
+            max-width: 120px;
+        }
+    }
+
+    @include screen('mobile') {
+        .footer_logo { margin-bottom: 2em; }
+    }
+}

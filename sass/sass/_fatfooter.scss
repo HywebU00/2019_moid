@@ -1,0 +1,149 @@
+.fatfooter {
+    @include make-fatfooter($fatfooter-length, 100%);
+    @extend %clearfix;
+    // overflow: hidden;
+    padding-bottom: 1em;
+    margin: 0 auto;
+    min-height: 500px;
+    background: url('../images/basic/bg-fatfooter.png') right bottom no-repeat, $fatfooterBgColor;
+    background-size: contain;
+    //   @include screen('mobile') {
+    //     display: none;
+    // }
+    .container {
+        // overflow: hidden;
+        @include box-sizing;
+        @include gutter;
+    }
+    // 按鈕
+    .btn-fatfooter {
+        font-size: .813em;
+        display: block;
+        // min-width: 6em;
+        width: 60px;
+        height: 60px;
+        color: #FFF;
+        border: none;
+        background: $secondaryColor;
+        position: absolute;
+        // right: 1%;
+        left: 50%;
+        margin-left: -25px;
+        top: -22px;
+        z-index: 90;
+        text-indent: -9999px;
+        border-radius: 50%;
+        box-shadow: none;
+        // @include border-radius(4px);
+        &:before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #FFF;
+            border-left: none;
+            border-bottom: none;
+            transform: rotate(-45deg);
+            left: 50%;
+            top: 50%;
+            margin-top: -6px;
+            margin-left: -6px;
+            transition: .3s ease-out;
+        }
+        &:hover,
+        &:focus {
+            background: darken($secondaryColor,0);
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        &.close {
+            &:before {
+                transform: rotate(135deg) !important;
+                top: 22px;
+            }
+        }
+    }
+    nav {
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 1.6em 0 0 2em;
+        @include box-sizing;
+        @include screen('mobile') {
+            padding: 1em 0;
+        }
+        ul {
+            @include li-reset;
+            @include screen('mobile') {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+            li {
+                display: inline-block;
+                text-align: left;
+                vertical-align: top;
+                margin: 0 -5px 1em 0;
+                @include box-sizing;
+                @include screen('mobile') {
+                    display: block;
+                    margin:0 0 .4em
+                }
+                a {
+                    line-height: 1.5;
+                    display: block;
+                    font-size: 1.125em;
+                    // font-weight: bold;
+                    padding: .5em 0px;
+                    color: #fff;
+                    @include box-sizing;
+                    &:hover{
+                        box-shadow: none;
+                    }
+                }
+                ul {
+                    margin-top: 5px;
+                    @include screen('mobile') {
+                        width: auto;
+                        padding-left: 2em;
+                    }
+                    li {
+                        display: block;
+                        margin: 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        a {
+                            display: block;
+                            // @include aSetting_nocolor;
+                            color: $lightColor;
+                            font-weight: normal;
+                            text-align: left;
+                            font-size: .938em;
+                            line-height: 1.5em;
+                            padding: .5em .2em;
+                            background: none;
+                            @include screen('mobile') {
+                                padding:.3em .2em;
+                            }
+                        }
+                    }
+                    //第三層關閉
+                    ul {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @include screen('tablet') {
+        background: $fatfooterBgColor;
+    }
+}

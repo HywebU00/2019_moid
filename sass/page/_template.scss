@@ -1,0 +1,96 @@
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    background: url('../images/basic/bg-wrap.jpg') 50% top no-repeat;
+    @include screen('mobile') {
+        // background: #FFF;
+        // background: url('../images/basic/bg-wrap.jpg') 50% top no-repeat, #49dfea;
+    }
+}
+
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+}
+
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0; // max-width: $container-max;
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile') {
+        padding-top: 55px;
+    } // 內頁標題設定
+    h2 {
+        line-height: 1.25em;
+    }
+}
+
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    padding-top: 220px;
+    padding-bottom: 40px;
+    min-height: 600px;
+    background: url('../images/basic/bg-Service.png') left bottom no-repeat,
+                url('../images/basic/bg-cloud.png') 50% 30px no-repeat,
+                url('../images/basic/bg-white.jpg') left 300px repeat-x;
+    @include screen('mobile') {
+        padding-top: 10em;
+    }
+    >.container {
+        @include gutter(); //gutter 代表左右要留白
+        background: rgba(255,255,255,.75);
+    }
+
+    .Title{
+        text-align: left;
+        color: $primaryColor;
+    }
+    .subTitle{
+        font-size: 1.5em;
+
+    }
+
+    .Inner_search{}
+}
+
+.login{
+    h3.Title{
+        &:before{
+            content:'';
+            display: inline-block;
+            vertical-align: middle;
+            width: .85em;
+            height: .85em;
+            background: url('../images/icon/icon_user.svg') left 50% no-repeat;
+            background-size: contain;
+            padding-right: 8px;
+        }
+    }
+}
+
+.description{
+    padding: 2em 0;
+    ul{
+        list-style: disc;
+        padding-left: 32px;
+    }
+}
+
+

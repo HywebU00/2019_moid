@@ -1,0 +1,14 @@
+.sp{
+	h2.Title{
+		&:before {
+		    content: '';
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: .85em;
+		    height: .85em;
+		    background: url(../images/icon/icon_search.svg) left 50% no-repeat;
+		    background-size: contain;
+		    padding-right: 8px;
+		}
+	}
+}

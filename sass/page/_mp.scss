@@ -1,0 +1,458 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+// 範例：
+.demosection {
+    [class^="col"] {
+        border: 2px solid #FFF;
+        background: #DEDEDE;
+    }
+}
+
+.container{
+    @include gutter(60px);
+    @include screen('mobile') {
+        @include gutter();
+    }
+}
+
+.KeyVisual{
+    .Left{
+        h2{
+            font-size: 3.6em;
+            color: #024866;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 1.25em;
+            color: #fff;
+            // font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            text-shadow: rgb(9, 170, 181) 0px 0px 4px;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li{
+                display: inline-block;
+                a{
+                    padding: .5em 1.5em;
+                    border-radius: 2em;
+                    font-size: 1.25em;
+                }
+                &:nth-child(1){
+                    a{
+                        background: darken($primaryColor, 10);
+                        color: #fff;
+                    }
+                }
+                &:nth-child(2){
+                    a{
+                        color: darken($primaryColor, 20);
+                        &:after{
+                            content: '';
+                            display: inline-block;
+                            width: 24px;
+                            height: 24px;
+                            background: url('../images/icon/icon_arrow_right-2.svg') 50% 50% no-repeat;
+                            background-size: contain;
+                            border-radius: 50%;
+                            vertical-align: bottom;
+                            margin-left: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .Right{
+        text-align: center;
+        
+        img{
+            max-height: 460px;
+        }
+    }
+    &:after{
+        content: '';
+        display: block;
+        height: 200px;
+        background: url('../images/basic/bg-cloud.png') 50% top no-repeat;
+    }
+
+    @include screen('mobile') {
+        .Left{
+            h2{ font-size: 2.8em; }
+            ul{
+                li{
+                    display: block;
+                    a{
+                        text-align: center;
+                        margin-bottom: .5em;
+                    }
+                }
+            }
+        }
+        .Right{
+            img{
+                max-height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.ＨowTo{
+    // padding-top: 200px;
+    position: relative;
+    background: url('../images/basic/bg-tab-type-1.png') 50% 360px no-repeat, #fff;
+    >.container{}
+
+    .Good{
+        padding: 60px 0 0;
+        background: linear-gradient(to bottom, rgba(65,180,230,1) 1%,rgba(137,209,239,1) 100%);
+        >.container{
+            @include gutter(0);
+        }
+        .col{
+            .inner{
+                box-shadow: 0px 0px 20px 0px rgb(83, 148, 183);
+                border-radius: 3px;
+                overflow: hidden;
+            }
+            .foto{
+                text-align: center;
+                background: #fff;
+                padding: 1em 0;
+                // border-top-left-radius: 3px;
+                // border-top-right-radius: 3px;
+                img{max-height: 180px; }
+            }
+            .text{
+                background: rgb(0,144,197); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(0,144,197,1) 1%, rgba(0,216,247,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(0,144,197,1) 1%,rgba(0,216,247,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(0,144,197,1) 1%,rgba(0,216,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0090c5', endColorstr='#00d8f7',GradientType=1 ); /* IE6-9 */
+                padding: 1em 2em;
+                // border-bottom-left-radius: 3px;
+                // border-bottom-right-radius: 3px;
+                h4{
+                    margin: 0;
+                    padding: .25em 0;
+                    font-size: 1.25em;
+                    line-height: 1.4;
+                    // color: darken($primaryColor, 20);
+                    color: #fff;
+                    border-bottom: solid 1px rgba(255,255,255,.75);
+                    min-height: 66px;
+                }
+                p{
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    @include screen('mobile') {
+        background: #fff;
+        .Good{
+            .col{
+                .text{
+                    h4{ min-height: auto; }
+                }
+            }
+        }
+    }
+
+
+    &:after{
+        content: '';
+        float: left;
+        display: block;
+        width: 500px;
+        height: 900px;
+        background: url('../images/hand.png') 50% 50% no-repeat;
+        background-size: contain;
+        margin-top: -860px;
+    }
+    @media screen and (max-width: 1600px) {
+        &:after{
+            width: 400px;
+            height: 720px;
+        }
+    }
+    @media screen and (max-width: 1400px) {
+        &:after{
+            // width: 360px;
+            // height: 670px;
+            margin-left: -4%;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        &:after{
+            margin-left: -10%;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        &:after{
+            margin-left: -14%;
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        &:after{
+            background: none;
+        }
+    }
+}
+
+.Good{
+    .col{}
+    @include screen('mobile') {
+        .col{
+            margin-bottom: 1em;
+        }
+    }
+}
+
+.News{
+    padding: 30px 0;
+    background: rgb(137,209,239); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(137,209,239,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(137,209,239,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(137,209,239,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89d1ef', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    .container{
+        background: url('../images/basic/bg-news-left.png') left bottom no-repeat, #fff;
+        background-size: contain;
+        padding: 2em 0;
+    }
+    .Left{
+        // background: url('../images/basic/bg-news-left.png') left bottom no-repeat;
+        // background-size: contain;
+        text-align: center;
+        
+        img{
+            max-height: 420px;
+        }
+    }
+    .Right{
+        time{ color: #333; }
+        h3{
+            text-align: left;
+            color: $primaryColor;
+        }
+        h3.Title { color: darken($primaryColor, 20); }
+        p{ color: #333; }
+        .more{}
+    }
+
+    .slick-dots li button{
+        width: 30px;
+        height: 4px;
+    }
+    .slick-dots li button:before{
+        width: 30px;
+        height: 4px;
+        border-radius: 0;
+    }
+
+    @include screen('mobile') {
+        .container{
+            background: #fff;
+            @include gutter();
+        }
+        .Left{
+            img{
+                max-height: auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// 最新消息輪播
+.newsSlider {
+    width: 100%;
+    padding-bottom: 3em;
+    @include gutter(0);
+    .img-container {
+        height: 400px;
+        width: 100%;
+        position: relative;
+        img {
+            width: 100% !important;
+            height: 100%;
+        }
+        @include screen('mobile') {
+            height: 280px;
+            width: 100%;
+        }
+    }
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        .caption {
+            position: absolute;
+            width: 100%;
+            height: 3em;
+            background: rgba(0, 0, 0, .45);
+            padding: 1em .5em .5em;
+            font-size: 1.125em;
+            color: #FFF;
+            margin: 0;
+            text-align: center;
+            bottom: 0;
+            @include text-overflow;
+            @include box-sizing;
+            @include screen('mobile') {
+                height: 2em;
+                width: 100%;
+                left: 0;
+                padding: .5em;
+            }
+        }
+        &:focus {
+            &:before {
+            	content:"";
+                position: absolute;
+                z-index: 9;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                box-shadow: 0 0px 0px 3px $primaryColor inset;
+            }
+        }
+    }
+}
+// 廣告輪播
+.banner{
+    .container{ @include gutter(0); }
+}
+.adSlider {
+    @include gutter(70px);
+    margin-bottom: 20px;
+    @include screen('mobile') {
+        @include gutter();
+    }
+    .slick-prev {
+        background: url(../vendor/slick/icon_arrow_left_inverse.png) no-repeat center center;
+        background-size: 80%;
+        left: 2px;
+        top: 30px;
+    }
+    .slick-next {
+        background: url(../vendor/slick/icon_arrow_right_inverse.png) no-repeat center center;
+        background-size: 80%;
+        right: 2px;
+        top: 30px;
+    }
+    .img-container {
+        width: 165px;
+        height: 55px;
+        margin: 0px 15px;
+        a {
+            display: block;
+            text-align: center;
+            img {
+                margin: 0 auto;
+            }
+        }
+        &:focus {
+            &:before {
+            	content:"";
+                position: absolute;
+                z-index: 9;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                box-shadow: 0 0px 0px 3px $primaryColor inset;
+            }
+        }
+    }
+    ul.slick-dots{
+        // bottom: -30px;
+        position: static;
+    }
+}
+
+
+
+.Title{
+    font-size: 2em;
+    text-align: center;
+    color: $primaryColor;
+}
+
+.Service{
+    // margin: 40px 0 0;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background: url('../images/basic/bg-Service.png') left bottom no-repeat, #fff;
+}
+
+.banner{
+    background: #fff;
+    .slick-dots li button{
+        width: 30px;
+        height: 4px;
+    }
+    .slick-dots li button:before{
+        width: 30px;
+        height: 4px;
+        border-radius: 0;
+    }
+}
+
+// QR code
+.QR_code{
+    width: 384px;
+    margin: 40px auto 0;
+    @include clearfix;
+    .Google_play, .App_store{
+        float: left;
+        padding: 0 20px;
+        img{
+            width: 150px;
+            height: 150px;
+            border: solid 1px #ddd;
+        }
+        &:before{
+            content: '';
+            display: block;
+            width: 150px;
+            height: 45px;
+            margin-bottom: 1em;
+        }
+    }
+    .Google_play{
+        &:before{
+            background: url('../images/icon/icon-google-play.png') 50% 50% no-repeat;
+            background-size: contain;
+        }
+    }
+    .App_store{
+        &:before{
+            background: url('../images/icon/icon-app-store.png') 50% 50% no-repeat;
+            background-size: contain;
+        }
+    }
+    @include screen('mobile') {
+        width: 100%;
+        .Google_play, .App_store{
+            float: none;
+            text-align: center;
+            &:before{
+                margin: 1em auto .5em;
+            }
+        }
+    }
+}
