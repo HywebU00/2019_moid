@@ -287,10 +287,10 @@
     @include screen('mobile') {
         &>.tabItem {
             &>a {
-                background-color: $primaryColor;
-                color: #fff;
+                // background-color: $primaryColor;
+                // color: #fff;
                 margin-bottom: 6px;
-                border-radius: 6px;
+                // border-radius: 6px;
             }
         }
         .tabContent {
